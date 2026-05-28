@@ -1,0 +1,11 @@
+
+import pandas as pd
+
+df = pd.read_excel(r"C:\Users\sg97976\Desktop\Mega_Project\Python_Megha_Project\Project_Test_Cases.xlsx")
+print(df)
+
+# Convert to list of dictionaries 
+
+test_cases = df.to_dict(orient="records")
+
+print(test_cases)
