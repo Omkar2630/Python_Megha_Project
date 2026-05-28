@@ -6,6 +6,49 @@ print(df)
 
 # Convert to list of dictionaries 
 
-test_cases = df.to_dict(orient="records")
+test_cases = df.to_dict(orient="records")    # orient='records' converts each row of the DataFrame into a dictionary, and returns a list of these dictionaries.
 
 print(test_cases)
+
+
+# Execution-------------------------------
+
+
+# def ecu_simulation(input_signal):
+#     if input_signal == "LOCK":
+#         return "LOCKED"
+#     elif input_signal == "UNLOCK":
+#         return "UNLOCKED"
+#     else:
+#         return "UNKNOWN"
+    
+    
+    
+# Run test case---------------------------------
+
+
+
+
+results = []
+
+for test in test_cases:
+    input_data = test["Input"]
+    expected = test["Expected"]
+
+    # actual = ecu_simulation(input_data)
+    actual = input("ecu_simulation input_data :")  # "Instead of ECU giving output,taking Input from the user and treat it as ECU output"
+
+    status = "PASS" if actual == expected else "FAIL"
+
+    results.append({
+        "Test_ID": test["Test_ID"],
+        "Input": input_data,
+        "Expected": expected,
+        "Actual": actual,
+        "Status": status
+    })
+
+# print(results)
+
+df_result = pd.DataFrame(results)
+print(df_result)
