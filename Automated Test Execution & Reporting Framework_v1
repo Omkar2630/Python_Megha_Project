@@ -1,54 +1,54 @@
-
 import pandas as pd
+import random
 
-df = pd.read_excel(r"C:\Users\sg97976\Desktop\Mega_Project\Python_Megha_Project\Project_Test_Cases.xlsx")
-print(df)
+# Read Excel File
+df = pd.read_excel(r"C:\Users\sg97976\Desktop\python\intropython\Projects\mega_project-\bcm_testcases.xlsx")
 
-# Convert to list of dictionaries 
+pass_count = 0
+fail_count = 0
 
-test_cases = df.to_dict(orient="records")    # orient='records' converts each row of the DataFrame into a dictionary, and returns a list of these dictionaries.
+log_file = open("execution_log.txt", "w")
+report_file = open("report.txt", "w")
 
-print(test_cases)
+for index, row in df.iterrows():
 
+    test_input = row["Input"]
+    expected = row["Expected"]
 
-# Execution-------------------------------
+    # BCM Logic
+    if test_input == "lock":
+        actual = random.choice([                     # using random module to choose the ECU output
+        "Door Locked",                        # Correct response
+        "Door Unlocked",                      # Wrong response
+        "ECU Timeout"                         # Failure simulation
+    ])
+        
+    elif test_input == "unlock":
+         actual = random.choice([
+        "Door Unlocked",
+        "Door Locked",
+        "Communication Error"
+    ])
 
+    else:
+        actual = "Invalid Input"
 
-# def ecu_simulation(input_signal):
-#     if input_signal == "LOCK":
-#         return "LOCKED"
-#     elif input_signal == "UNLOCK":
-#         return "UNLOCKED"
-#     else:
-#         return "UNKNOWN"
-    
-    
-    
-# Run test case---------------------------------
+    # PASS / FAIL
+    if actual == expected:
+        status = "PASS"
+        pass_count += 1
+    else:
+        status = "FAIL"
+        fail_count += 1
 
+    result = f"{row['TC_ID']} --> {status}"
 
+    print(result)
 
+    log_file.write(result + "\n")
+    report_file.write(
+        f"{row['TC_ID']} | Expected: {expected} | Actual: {actual} | {status}\n"
+    )
 
-results = []
-
-for test in test_cases:
-    input_data = test["Input"]
-    expected = test["Expected"]
-
-    # actual = ecu_simulation(input_data)
-    actual = input("ecu_simulation input_data :")  # "Instead of ECU giving output,taking Input from the user and treat it as ECU output"
-
-    status = "PASS" if actual == expected else "FAIL"
-
-    results.append({
-        "Test_ID": test["Test_ID"],
-        "Input": input_data,
-        "Expected": expected,
-        "Actual": actual,
-        "Status": status
-    })
-
-# print(results)
-
-df_result = pd.DataFrame(results)
-print(df_result)
+log_file.close()
+report_file.close()
