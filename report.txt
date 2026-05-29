@@ -1,0 +1,15 @@
+TC_01 | Expected: Door Locked | Actual: Door Locked | Status: PASS
+TC_02 | Expected: Door Unlocked | Actual: Door Unlocked | Status: PASS
+TC_03 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_04 | Expected: Door Locked | Actual: Invalid Input | Status: FAIL
+TC_05 | Expected: Door Unlocked | Actual: Door Locked | Status: FAIL
+TC_06 | Expected: Door Locked | Actual: Door Unlocked | Status: FAIL
+TC_07 | Expected: Door Locked | Actual: Invalid Input | Status: FAIL
+TC_08 | Expected: Door Unlocked | Actual: Invalid Input | Status: FAIL
+TC_09 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_10 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_11 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_12 | Expected: Door Locked | Actual: Invalid Input | Status: FAIL
+TC_13 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_14 | Expected: Invalid Input | Actual: Invalid Input | Status: PASS
+TC_15 | Expected: Invalid Input | Actual: Door Unlocked | Status: FAIL
