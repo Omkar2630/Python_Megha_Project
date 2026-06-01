@@ -99,8 +99,7 @@ plt.pie(
     labels=labels,
     autopct="%1.1f%%",
     explode=[0, 0.1],
-    shadow=True
-)
+    shadow=True)
 
 plt.title("BCM Door Lock Test Results")
 
