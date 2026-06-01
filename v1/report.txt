@@ -1,0 +1,4 @@
+TC_01 | Expected: Door Locked | Actual: Door Unlocked | FAIL
+TC_02 | Expected: Door Unlocked | Actual: Door Unlocked | PASS
+TC_03 | Expected: Door Locked | Actual: Door Unlocked | FAIL
+TC_04 | Expected: Door Unlocked | Actual: Door Unlocked | PASS

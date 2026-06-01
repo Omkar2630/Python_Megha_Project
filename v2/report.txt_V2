@@ -1,0 +1,7 @@
+TC01 | Action: lock | Speed: 0 | Door Status: Closed | Expected: Door Locked | Actual: Door Locked | PASS
+TC02 | Action: unlock | Speed: 0 | Door Status: Closed | Expected: Door Unlocked | Actual: Door Unlocked | PASS
+TC03 | Action: unlock | Speed: 70 | Door Status: Closed | Expected: Door Locked | Actual: Door Locked | PASS
+TC04 | Action: auto_lock | Speed: 25 | Door Status: Closed | Expected: Door Locked | Actual: Door Locked | PASS
+TC05 | Action: auto_lock | Speed: 25 | Door Status: Open | Expected: Door Unlocked | Actual: Door Unlocked | PASS
+TC06 | Action: lock | Speed: -10 | Door Status: Closed | Expected: Error | Actual: Error | PASS
+TC07 | Action: invalid | Speed: 0 | Door Status: Closed | Expected: Invalid Input | Actual: Invalid Input | PASS

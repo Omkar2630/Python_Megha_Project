@@ -2,7 +2,7 @@ import pandas as pd
 import random
 
 # Read Excel File
-df = pd.read_excel(r"C:\Users\sg97976\Desktop\python\intropython\Projects\mega_project-\bcm_testcases.xlsx")
+df = pd.read_excel(r"C:\Users\sg97976\Desktop\Mega_Project\Python_Megha_Project\v1\Project_Test_Cases.xlsx")
 
 pass_count = 0
 fail_count = 0
