@@ -83,8 +83,8 @@ PDFConverter.convert_to_pdf(
 )
 
 
-print("Report Generated Successfully")
-print("Word Report : reports/BCM_Report.docx")
+# print("Report Generated Successfully")
+# print("Word Report : reports/BCM_Report.docx")
 
 # Uncomment after docx2pdf installation
 # print("PDF Report  : reports/BCM_Report.pdf")
