@@ -1,6 +1,0 @@
-hello
-this documentation is for which libraries we have to installed
-
-pip install pandas -->reading excel file
-pip install openpyxl --->for Excel Support
-
